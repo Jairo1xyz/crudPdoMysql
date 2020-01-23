@@ -9,7 +9,39 @@ function mostrar(){
 }
 
 function obtenerDatos(id){
+	$.ajax({
+		type:"POST",
+		data: "id="+id,
+		url:"procesos/obtenerDatos.php",
+		success:function(r){
+			r=jQuery.parseJSON(r);
+			
+			$('#id').val(r['ID']);
+			$('#nombreu').val(r['NOMBRE']);
+			$('#sueldou').val(r['SUELDO']);
+			$('#edadu').val(r['EDAD']);
+			$('#fechau').val(r['FREGISTRO']);
+		}
+	});
+}
 
+function actualizarDatos(){
+	$.ajax({
+		type:"POST",
+		url:"procesos/actualizarDatos.php",
+		data: $('#frminsertu').serialize(),
+		success:function(r){
+			if(r==1){
+				mostrar();
+				swal("¡Actualización exitosa!", ":D", "success");
+			} else{
+				swal("No se pudo actualizar", "Error", "error");
+			}
+			
+
+		}
+	});
+	return false;
 }
 
 function eliminarDatos(id){
