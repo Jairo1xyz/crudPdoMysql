@@ -54,6 +54,21 @@ function eliminarDatos(id){
 	})
 	.then((willDelete) => {
 		if (willDelete) {
+			$.ajax({
+				type:"POST",
+				url:"procesos/eliminarDatos.php",
+				data:"id="+id,
+				success:function(r){
+					if(r==1){
+						mostrar();
+						swal("¡Eliminado con éxito!", ":D", "success");
+					} else{
+						swal("No se pudo eliminar", "Error", "error");
+					}
+
+
+				}
+			});
 			
 		} 
 	});

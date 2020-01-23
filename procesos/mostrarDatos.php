@@ -32,7 +32,7 @@ foreach ($datos as $key => $value) {
 						
 					</td>
 					<td>
-						<span class="btn btn-danger" onclick="eliminarDatos('.$value['ID'].')">
+						<span class="btn btn-danger btn-sm" onclick="eliminarDatos('.$value['ID'].')">
 							<li class="fas fa-trash-alt"></li>
 						</span>
 					</td>

@@ -55,4 +55,10 @@ class Crud extends Conexion{
 			":id" =>$datos["id"]
 		));
 	}
+
+	function eliminarDatos($id){
+		$sql="DELETE FROM T_CRUD WHERE ID=:id";
+		$query=Conexion::conectar()->prepare($sql);
+		return $query->execute(array(":id" => $id));
+	}
 }
