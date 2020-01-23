@@ -26,3 +26,24 @@ function eliminarDatos(id){
 		} 
 	});
 }
+
+function insertarDatos(){
+	$.ajax({
+		type:"POST",
+		url:"procesos/insertarDatos.php",
+		data: $('#frminsert').serialize(),
+		success:function(r){
+			if(r==1){
+				// Limpiar formulario
+				$('#frminsert')[0].reset();
+				mostrar();
+				swal("¡Agregado con éxito!", ":D", "success");
+			} else{
+				swal("No se pudo agregar", "Error", "error");
+			}
+			
+
+		}
+	});
+	return false;
+}
