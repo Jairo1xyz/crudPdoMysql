@@ -35,37 +35,7 @@
 						<hr>
 						<div class="row">
 							<div class="col-sm-12">
-								<table class="table table-dark">
-									<thead>
-										<tr class="font-weight-bold">
-											<td>Nombre</td>
-											<td>Sueldo</td>
-											<td>Edad</td>
-											<td>Fecha Registro</td>
-											<td>Editar</td>
-											<td>Eliminar</td>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td>
-												<span class="btn btn-warning btn-sm" onclick="obtenerDatos()" data-toggle="modal" data-target="#actualizarModal">
-													<i class="fas fa-edit"></i>
-												</span>
-												
-											</td>
-											<td>
-												<span class="btn btn-danger" onclick="eliminarDatos()">
-													<li class="fas fa-trash-alt"></li>
-												</span>
-											</td>
-										</tr>
-									</tbody>
-								</table>
+								<div id="tablaDatos">Cargando datos...</div>
 							</div>
 						</div>
 					</div>
